@@ -1,0 +1,134 @@
+{{extend 'layout.html'}}
+
+{{block header}}
+{{end}}
+
+<div>
+   <center> <table>
+        <tr>
+            <th colspan="2">
+                Datos Personales
+            </th>
+        </tr>
+        <tr>
+            <td>
+                Nombre:
+            </td>
+            <td><textarea onfocus="if(this.value=='escribe'){this.value='';} " onblur="if(this.value=='')this.value='escribe'" height: 50px;>{{=persona.nombre}}</textarea>
+            </td>
+            <td rowspan="7">
+                <img src="../static/images/k.jpg" class="card-img-top" alt="Imagen de perfil">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Apellido:
+            </td>
+            <td><textarea onfocus="if(this.value=='escribe'){this.value='';} " onblur="if(this.value=='')this.value='escribe'" height: 100px; width: 100%;> {{=persona.apellido}}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Fecha De Nacimiento:
+            </td>
+            <td><textarea onfocus="if(this.value=='escribe'){this.value='';} " onblur="if(this.value=='')this.value='escribe'" height: 100px; width: 100%;>{{=persona.fecha_de_nacimiento}} </textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Edad:
+            </td>
+            <td><textarea onfocus="if(this.value=='escribe'){this.value='';} " onblur="if(this.value=='')this.value='escribe'" height: 100px; width: 100%;>{{=persona.edad}}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Direccion:
+            </td>
+            <td><textarea onfocus="if(this.value=='escribe'){this.value='';} " onblur="if(this.value=='')this.value='escribe'" height: 100px; width: 100%;>{{=persona.direccion}}</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Telefono:
+            </td>
+            <td><textarea onfocus="if(this.value=='escribe'){this.value='';} " onblur="if(this.value=='')this.value='escribe'" height: 100px; width: 100%;>{{=persona.telefono}} </textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Github:
+            </td>
+            <td><textarea onfocus="if(this.value=='escribe'){this.value='';} " onblur="if(this.value=='')this.value='escribe'" height: 100px; width: 100%;>{{=persona.github}}</textarea>
+            </td>
+        </tr>
+    </table></center>
+    <center> <table WIDTH="50%">
+        <tr>
+            <th  colspan="2">
+                Estudios
+            </th>
+        </tr>
+        {{for estudios in persona.estudio:}}
+            <tr>
+                <th>
+                    Nivel:
+                </th>
+                <th>
+                    {{=estudios.nivel}}
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Nombre:
+                </td>
+                <td><textarea onfocus="if(this.value=='escribe'){this.value='';} " onblur="if(this.value=='')this.value='escribe'" height: 100px; width: 100%;>{{=estudios.nombre_institucion}}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Lugar:
+                </td>
+                <td><textarea onfocus="if(this.value=='escribe'){this.value='';} " onblur="if(this.value=='')this.value='escribe'" height: 100px; width: 100%;>{{=estudios.lugar}}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Duracion:
+                </td>
+                <td><textarea onfocus="if(this.value=='escribe'){this.value='';} " onblur="if(this.value=='')this.value='escribe'" height: 100px; width: 100%;>{{=estudios.ano_inicio}} - {{=estudios.ano_final}}</textarea>
+                </td>
+            </tr>
+        {{pass}}
+    </table></center>
+    <center><table WIDTH="50%">
+        <tr>
+            <th  colspan="2">
+                Referencias
+            </th>
+        </tr>
+        {{for referencia in persona.referencia:}}
+            <tr>
+                <td>
+                    Nombre:
+                </td>
+                <td><textarea onfocus="if(this.value=='escribe'){this.value='';} " onblur="if(this.value=='')this.value='escribe'" height: 100px; width: 100%;>{{=referencia.nombre}}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Apellido:
+                </td>
+                <td><textarea onfocus="if(this.value=='escribe'){this.value='';} " onblur="if(this.value=='')this.value='escribe'" height: 100px; width: 100%;>{{=referencia.apellido}}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Telefono:
+                </td>
+                <td><textarea onfocus="if(this.value=='escribe'){this.value='';} " onblur="if(this.value=='')this.value='escribe'" height: 100px; width: 100%;>{{=referencia.telefono}}</textarea>
+                </td>
+            </tr>
+        {{pass}}
+        <table></center>
+</div>
